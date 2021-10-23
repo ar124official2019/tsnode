@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Signup
+
+        style
+            include ./tailwind.min.css
+    body 
+        h2(class="text-center") Signup
+        form(class="p-4" method="post" action="/auth/signup")
+            div.p-2
+                label Email
+                input(class="p-2 block w-50 border border-lg" type="email" placeholder="Enter email" name="email")
+
+            div.p-2
+                label Password
+                input(class="p-2 block w-50 border border-lg" type="password" placeholder="Enter password" name="password")
+
+            if (error)
+                div.p-2.mb-2.bg-red-500 #{ error }
+
+            button(class="p-2 border-0 bg-blue-500") Signup
